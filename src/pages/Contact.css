@@ -1,0 +1,227 @@
+.contact-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f0f4ff, #e0f7fa);
+  min-height: 100vh;
+  margin-left: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-header h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #0f172a;
+  position: relative;
+}
+
+.contact-header h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #3b82f6;
+  margin: 0.6rem auto 0;
+  border-radius: 2px;
+}
+
+.contact-header p {
+  color: #475569;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+
+.contact-form {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid #cbd5e1;
+  padding: 0.9rem 1.2rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: #fff;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+.contact-form button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.9rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #2563eb;
+}
+
+.contact-info {
+  flex: 1;
+  margin-left:2rem;
+  font-size: 1rem;
+  color: #334155;
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transform: translateY(30px);
+  opacity: 0;
+  animation: slideInUp 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* Fancy icons for labels */
+.contact-info p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.contact-info p strong {
+  min-width: 80px;
+  color: #0f172a;
+}
+
+.contact-info a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+/* Animation keyframe */
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* ---------------------------
+    Responsive Styles
+---------------------------- */
+@media (max-width: 768px) {
+  .contact-section {
+    margin-left: 0;
+    width: -webkit-fill-available;
+    padding: 2.5rem 1.2rem;
+    background: linear-gradient(145deg, #f0f4ff, #e0f7fa);
+  }
+
+  .contact-header h2 {
+    font-size: 2rem;
+  }
+
+  .contact-header h2::after {
+    margin: 0.5rem auto;
+  }
+
+  .contact-header p {
+    font-size: 1rem;
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto 2rem;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .contact-form,
+  .contact-info {
+    width: -webkit-fill-available;
+    padding: 1.5rem;
+    border-radius: 14px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .contact-form button {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .contact-info p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .contact-header p {
+    font-size: 0.95rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+
+  .contact-form button {
+    font-size: 0.95rem;
+  }
+
+  .contact-info p {
+    font-size: 0.9rem;
+  }
+}

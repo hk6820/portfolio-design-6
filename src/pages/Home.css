@@ -1,0 +1,132 @@
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.hero-section {
+  margin-left: 280px;
+  flex: 1;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    margin-left: 280px; /* matches sidebar width */
+  position: relative; /* to ensure z-index stacking works properly */
+  z-index: 1; /* keeps it under sidebar if overlapping */
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.cta-buttons {
+  margin-top: 2rem;
+}
+
+button.primary {
+  background-color: #111;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button.secondary {
+  background-color: transparent;
+  border: 2px solid #111;
+  color: #111;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button.primary:hover,
+button.secondary:hover {
+  transform: scale(1.05);
+}
+
+.hero-image img {
+  max-width: 400px;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+.fade-in-delay {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 0.5s;
+}
+
+.fade-in-late {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 1s;
+}
+
+.fade-in-image {
+  opacity: 0;
+  animation: fadeInUp 1.2s ease forwards 1.5s;
+}
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* adjust as needed */
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .hero-section {
+    margin-left: 0;
+    padding: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-width: 80%;
+  }
+}

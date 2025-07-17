@@ -1,0 +1,272 @@
+/* About.css */
+
+.about-section {
+  margin-left: 20rem;
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.about-heading h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.about-heading h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #2563eb;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+.about-heading p {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.about-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  animation: slideIn 1s ease;
+}
+
+.about-left .profile-photo {
+  width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.about-right {
+  flex: 1;
+}
+
+.about-right h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.intro-text {
+  font-style: italic;
+  color: #475569;
+}
+
+/* ⬇️ Updated Light Card Background for Info Section */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin: 2rem 0;
+  margin-right: 1rem;;
+  background: #fefefe;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.info-grid:hover {
+  transform: translateY(-2px);
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #334155;
+  background: #f1f5f9;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.info-item:hover {
+  background: #e2e8f0;
+}
+
+.info-icon {
+  color: #2563eb;
+  margin-right: 0.5rem;
+}
+
+.description {
+  color: #4b5563;
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+
+.download-resume-btn {
+  position: static;
+  float: right;
+  top: 2rem;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.download-resume-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Optional: Delay Animations */
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.fade-in-delay {
+  animation: fadeIn 0.8s ease forwards 0.4s;
+}
+
+.fade-in-late {
+  animation: fadeIn 0.8s ease forwards 0.8s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-section {
+    margin-left: 0;
+    padding: 2rem 1rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-left .profile-photo {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .download-resume-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+.skills-section {
+  margin-top: 3rem;
+  background: #f0f4f8;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.8s ease-in-out 1s;
+}
+
+.skills-heading {
+  font-size: 1.8rem;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.skills-subtext {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  transform: scale(1.02);
+}
+
+.skill-front {
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.skill-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  background: #2563eb;
+  color: white;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.skill-card:hover .skill-back {
+  opacity: 1;
+}
+
+.skill-card:hover .skill-front {
+  opacity: 0;
+}
+
+.skill-back ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skill-back li {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

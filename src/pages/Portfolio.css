@@ -1,0 +1,167 @@
+.portfolio-slider .slick-slide > div {
+  padding: 0 10px; /* space between cards */
+}
+
+.portfolio-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 1rem 0;
+  animation: fadeInCard 0.5s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.portfolio-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f8fafc, #e0f2fe);
+  min-height: 80vh;
+  margin-left: 280px; /* if using a sidebar layout */
+}
+
+@media (max-width: 768px) {
+  .portfolio-section {
+    margin-left: 0;
+    padding: 3rem 1rem;
+  }
+}
+
+.portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.portfolio-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0f172a;
+  position: relative;
+}
+
+.portfolio-header h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #2563eb;
+  margin: 0.6rem auto 0;
+  border-radius: 2px;
+}
+
+
+.portfolio-slider-wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Image Wrapper */
+.portfolio-image-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.portfolio-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-card:hover .portfolio-image {
+  transform: scale(1.05);
+}
+
+/* Content */
+.portfolio-content {
+  padding: 1rem 1.2rem;
+  text-align: center;
+}
+
+.portfolio-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-content p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.view-project-link {
+  display: inline-block;
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.view-project-link:hover {
+  border-bottom: 1px solid #2563eb;
+}
+
+/* Slick dots customization */
+.slick-dots {
+  bottom: -30px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.slick-dots li {
+  margin: 0;
+  padding: 0;
+}
+
+.slick-dots li button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  border: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.slick-dots li.slick-active button {
+  background-color: #2563eb;
+  transform: scale(1.2);
+}
+
+/* Optional: Increase clickable area */
+.slick-dots li button::before {
+  display: none;
+}
+
+
+/* Animation */
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
