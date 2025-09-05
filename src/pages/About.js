@@ -13,7 +13,10 @@ const About = ({
     description,
     infoHeading,
     id,
-    info = [], skills
+    info = [], 
+    skills = [],
+    skillsHeading,
+    skillsDescription
 }) => {
     return (
         <section className="about-section" id={id || "about"}>
@@ -43,17 +46,19 @@ const About = ({
                     <p className="description fade-in-late">{description}</p>
                 </div>
             </div>
-            <a
-                href={resumePDF}
-                download
-                className="download-resume-btn"
-            >
-                Download Resume
-            </a>
+            <div className="download-resume-container">
+                <a
+                    href={resumePDF}
+                    download
+                    className="download-resume-btn"
+                >
+                    Download Resume
+                </a>
+            </div>
             {/* Skills Section */}
             <SkillsSection
-                heading="Skills"
-                description="Hover to see my core competencies and tools I work with"
+                heading={skillsHeading || "Skills"}
+                description={skillsDescription || "Hover to see my core competencies and tools I work with"}
                 skills={skills}
             />
 
